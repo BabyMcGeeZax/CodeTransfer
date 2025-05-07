@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <string>
 using namespace std;
 
 int gcd(int a, int b) {
@@ -15,10 +17,19 @@ int main() {
     std::cout << "Print all numbers coprime to: ";
     std::cin >> n;
 
+    vector<int> vAllCoprimes;
+
     for (int i = 0; i < n; ++i) {
         gcd(i,n);
-        cout << gcd(i,n) << endl;
+        if(gcd(i,n)==1){
+            vAllCoprimes.push_back(i);
+        }
     }
+
+    for (int num : vAllCoprimes) {
+        std::cout << num << " ";
+    }
+    std::cout << "\n";
 
     return 0;
 }
