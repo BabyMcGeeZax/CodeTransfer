@@ -12,16 +12,12 @@ int gcd(int a, int b) {
     return a;
 }
 
-int main() {
-    int n;
-    std::cout << "Print all numbers coprime to: ";
-    std::cin >> n;
-
+int Allcoprimes(int n) {
     vector<int> vAllCoprimes;
 
     for (int i = 0; i < n; ++i) {
-        gcd(i,n);
-        if(gcd(i,n)==1){
+        gcd(i, n);
+        if (gcd(i, n) == 1) {
             vAllCoprimes.push_back(i);
         }
     }
@@ -30,6 +26,43 @@ int main() {
         std::cout << num << " ";
     }
     std::cout << "\n";
+
+    return 1;
+}
+
+int genPer(int n) {
+    int d;
+    int c;
+    int k;
+    vector<int> comp;
+    cout << "Insert a and c for k -> ak+c : ";
+    cin >> d >> c;
+    for (int i = 0; i < n; i++) {
+        k = d * i + c;
+        k = k % n;
+        comp.push_back(k);
+    }
+    for (int num : comp) {
+        std::cout << num << " ";
+    }
+    std::cout << "\n";
+    
+    return 1;
+}
+
+int genAllPer(int n) {
+    int s = 0;
+    s = 2;
+}
+
+int main() {
+    int n;
+    std::cout << "Print all numbers coprime to: ";
+    std::cin >> n;
+
+    Allcoprimes(n);
+    genAllPer(n);
+    //genPer(n);
 
     return 0;
 }
