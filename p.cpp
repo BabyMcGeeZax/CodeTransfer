@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+vector<int> vAllCoprimes;
+
 int gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -13,8 +15,6 @@ int gcd(int a, int b) {
 }
 
 int Allcoprimes(int n) {
-    vector<int> vAllCoprimes;
-
     for (int i = 0; i < n; ++i) {
         gcd(i, n);
         if (gcd(i, n) == 1) {
@@ -30,13 +30,9 @@ int Allcoprimes(int n) {
     return 1;
 }
 
-int genPer(int n) {
-    int d;
-    int c;
+int genPer(int n,int d,int c) {
     int k;
     vector<int> comp;
-    cout << "Insert a and c for k -> ak+c : ";
-    cin >> d >> c;
     for (int i = 0; i < n; i++) {
         k = d * i + c;
         k = k % n;
@@ -50,9 +46,12 @@ int genPer(int n) {
     return 1;
 }
 
-int genAllPer(int n) {
-    int s = 0;
-    s = 2;
+int genAllPer(int n,int d,int c) {
+    int k;
+    for(int i=0;i<vAllCoprimes.size();i++){
+        
+    }
+    return 1;
 }
 
 int main() {
@@ -61,8 +60,14 @@ int main() {
     std::cin >> n;
 
     Allcoprimes(n);
-    genAllPer(n);
-    //genPer(n);
+
+    int d;
+    int c;
+    cout << "Insert a and c for k –> ak+c : ";
+    cin >> d >> c;
+
+    genAllPer(n,d,c);
+    //genPer(n,d,c);
 
     return 0;
 }
