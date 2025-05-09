@@ -48,8 +48,22 @@ int genPer(int n,int d,int c) {
 
 int genAllPer(int n,int d,int c) {
     int k;
+    vector<int>vGenAll;
     for(int i=0;i<vAllCoprimes.size();i++){
-        
+        int x = vAllCoprimes.at(i);
+        for(int i=0;i<n;i++){
+            int y=i;
+            for(int i=0;i<n;i++){
+                k=x*i+y;
+                k=k%n;
+                vGenAll.push_back(k);
+            }
+            for(int num:vGenAll){
+                cout<<num<<" ";
+            }
+            cout<<endl;
+        }
+        cout<<endl;
     }
     return 1;
 }
